@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/python
 # Edit at https://www.toptal.com/developers/gitignore?templates=python
 
+### Remove the huge dataset from the repo because they can be generated with the python script "communication-storage/generateData.py"
+/communication-storage/generated_datasets/*
+
 ### Removing Json downloaded with api call
 /data/json/*
 
