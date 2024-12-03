@@ -22,5 +22,16 @@ with open(csv_file_path, mode='r') as file:
         # Send the POST request
         response = requests.post(url, json=payload)
         
-        # Print the response from the server
-        print(f"Response from server for row {row}: {response.text}")
+        # Print the sizes estimations
+        size = 0
+        print("-------------")
+        print(f"HTTP/{response.raw.version/10} {response.raw.status} {response.raw.reason}")
+        for k,v in response.raw.headers.items():
+            size += len(k) + len(v)
+        size += len(response.request.body)
+        print(f"Size estimation from client : {size} bytes")
+        
+        print(f"Size estimation from server : {response.text}")
+        print("-------------")
+        
+        

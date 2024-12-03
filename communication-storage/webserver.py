@@ -11,7 +11,7 @@ def handle_request():
     headers_size = sum(len(key) + len(value) for key, value in headers.items())
     # total size
     total_content_length = content_length + headers_size
-
+    
     if total_content_length is None:
         return 'No content received', 400
     return f"Size of incoming request: {total_content_length} bytes", 200
