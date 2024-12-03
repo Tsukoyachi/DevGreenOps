@@ -2,3 +2,4 @@ influxdb-client
 flask
 paho-mqtt
 pandas
+python-dotenv
